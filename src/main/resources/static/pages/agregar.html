@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Participante</title>
+    <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <h1>Formulario de Participante</h1>
+    
+    <form id="formulario">
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div>
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required>
+        </div>
+        <div>
+            <label for="apodo">Apodo:</label>
+            <input type="text" id="apodo" name="apodo" required>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        $(document).ready(function() {
+            $('#formulario').submit(function(event) {
+                event.preventDefault();
+
+                const nombre = $('#nombre').val();
+                const apellido = $('#apellido').val();
+                const apodo = $('#apodo').val();
+
+                const datos = {
+                    nombre: nombre,
+                    apellido: apellido,
+                    apodo: apodo
+                };
+                console.log(datos)
+
+                $.ajax({
+                    url: '/agregarUsuario',
+                    method: 'POST',
+                    data: JSON.stringify(datos),
+                    contentType: 'application/json',
+                    success: function(response) {
+                        console.log('Datos enviados correctamente:', response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error al enviar los datos:', error);
+                        console.log('Respuesta del servidor:', xhr.responseText);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
