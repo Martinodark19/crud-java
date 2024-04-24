@@ -1,12 +1,6 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import {router} from './routes.js'
-import IndexPasajesComponent from './components/indexPasajesComponent.vue';
+import { createApp } from 'vue';
+import router from './routes'; 
+import indexPasajesComponent from './components/indexPasajesComponent.vue';
 
-Vue.use(VueRouter);
-
-new Vue({
-    router,
-    render: h => h(IndexPasajesComponent)
-  }).$mount('#app');
+createApp(indexPasajesComponent).use(router).mount('#app');
 

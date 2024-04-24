@@ -52,14 +52,11 @@
 
 <script>
 import axios from 'axios'
-import viajesComponent from './viajes/viajesComponent.vue'
 
 export default
 {  
 
-  components:{
-    viajesComponent
-  },
+ 
 
 
   data(){

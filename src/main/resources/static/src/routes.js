@@ -6,7 +6,6 @@ import viajesComponent from './components/viajes/viajesComponent.vue';
 export const routes = 
 [
     {
-         
         path: '/crearViajes',
         component: crearViajesComponent,
     },
