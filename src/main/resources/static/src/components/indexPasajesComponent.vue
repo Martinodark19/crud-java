@@ -310,9 +310,9 @@ export default
     {
       axios.post('/pasajesDisponibles',{
         
-        ciudadDeInicio: ciudadDeInicio,
-        ciudadDeDestino: ciudadDeDestino,
-        fechaSeleccionada:fechaSeleccionada
+        ciudad_inicio: ciudadDeInicio,
+        ciudad_de_destino: ciudadDeDestino,
+        fecha_seleccionada:fechaSeleccionada
       }).then(response => {
         
         if(response.status == 200)

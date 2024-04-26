@@ -1,6 +1,8 @@
 package com.javaAplication.java.models;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,7 +39,7 @@ public class BusesViajesInfoModel
     private String ciudad_destino;
 
     @Column
-    private String hora;
+    private LocalTime hora;
 
     @Column
     private String terminal_inicio;
