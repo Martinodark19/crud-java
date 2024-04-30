@@ -15,14 +15,12 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table()
-public class PasajesModel
-{
+@Table(name = "pasajes")
+public class PasajesModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
     @ManyToOne
     @JoinColumn(name = "identificador_bus")
     private BusesViajesInfoModel identificador_bus_id;
@@ -34,7 +32,7 @@ public class PasajesModel
     private String apellido;
 
     @Column
-    @Size(min = 10, max = 10, message = "el rut debe tener 10 caracteres como minimo y maximo") 
+    @Size(min = 10, max = 10, message = "el rut debe tener 10 caracteres como minimo y maximo")
     private String rut;
 
     @Column
@@ -53,7 +51,7 @@ public class PasajesModel
     private LocalDate fecha_vuelta_viaje;
 
     @Column
-    private LocalTime hora;
+    private String hora;
 
     @Column
     private int asiento;
@@ -66,8 +64,6 @@ public class PasajesModel
 
     @Column
     private String terminal_bajada;
-
-
 
     // Getter y Setter para id
     public Long getId() {
@@ -156,11 +152,11 @@ public class PasajesModel
     }
 
     // Getter y Setter para hora
-    public LocalTime getHora() {
+    public String getHora() {
         return hora;
     }
 
-    public void setHora(LocalTime hora) {
+    public void setHora(String hora) {
         this.hora = hora;
     }
 

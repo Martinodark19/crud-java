@@ -11,7 +11,6 @@ import jakarta.persistence.Table;
 
 import com.javaAplication.java.models.BusesViajesInfoModel;
 
-
 @Entity
 @Table(name = "paradas")
 public class ParadasModel {
@@ -19,7 +18,6 @@ public class ParadasModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
     @ManyToOne
     @JoinColumn(name = "identificador_bus")
     private BusesViajesInfoModel identificador_bus_id;
@@ -31,7 +29,6 @@ public class ParadasModel {
     public Long getId() {
         return id;
     }
-
 
     // Getter para el campo identificador_bus_id
     public BusesViajesInfoModel getIdentificador_bus_id() {

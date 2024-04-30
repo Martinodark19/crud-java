@@ -12,13 +12,11 @@ import com.javaAplication.java.models.BusesViajesInfoModel;
 
 @Entity
 @Table(name = "asientos")
-public class AsientosModel 
-{
+public class AsientosModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    @Column
+
     @ManyToOne
     @JoinColumn(name = "identificador_bus")
     private BusesViajesInfoModel identificador_bus_id;
@@ -42,13 +40,12 @@ public class AsientosModel
     }
 
     // Getter
-    
-    public BusesViajesInfoModel getIdentificador_bus_id() 
-    {
+
+    public BusesViajesInfoModel getIdentificador_bus_id() {
         return identificador_bus_id;
     }
 
-    // setters 
+    // setters
     public void setIdentificador_bus_id(BusesViajesInfoModel identificador_bus_id) {
         this.identificador_bus_id = identificador_bus_id;
     }
@@ -58,33 +55,28 @@ public class AsientosModel
         return numero_asiento;
     }
 
-   // setters 
-    public void setNumero_asiento(int numero_asiento) 
-    {
+    // setters
+    public void setNumero_asiento(int numero_asiento) {
         this.numero_asiento = numero_asiento;
     }
 
     // Getter
-    public String getTipo_de_asiento() 
-    {
+    public String getTipo_de_asiento() {
         return tipo_de_asiento;
     }
 
-       // setters 
-    public void setTipo_de_asiento(String tipo_de_asiento) 
-    {
+    // setters
+    public void setTipo_de_asiento(String tipo_de_asiento) {
         this.tipo_de_asiento = tipo_de_asiento;
     }
 
     // Getter
-    public String getEstado_asiento() 
-    {
+    public String getEstado_asiento() {
         return estado_asiento;
     }
 
-       // setters 
-    public void setEstado_asiento(String estado_asiento) 
-    {
+    // setters
+    public void setEstado_asiento(String estado_asiento) {
         this.estado_asiento = estado_asiento;
     }
 }

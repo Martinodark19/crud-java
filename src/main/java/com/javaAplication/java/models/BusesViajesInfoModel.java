@@ -1,8 +1,6 @@
 package com.javaAplication.java.models;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -14,8 +12,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "buses_viajes_info")
 // Esta entidad contendrá la información de los viajes
-public class BusesViajesInfoModel 
-{
+public class BusesViajesInfoModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -39,7 +36,7 @@ public class BusesViajesInfoModel
     private String ciudad_destino;
 
     @Column
-    private LocalTime hora;
+    private String hora;
 
     @Column
     private String terminal_inicio;
